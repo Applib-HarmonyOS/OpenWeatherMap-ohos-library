@@ -1,37 +1,37 @@
 package com.kwabenaberko.openweathermaplib.model.common;
 
-import com.google.gson.annotations.SerializedName;
+import com.google.api.client.util.Key;
 
 /**
  * Created by Kwabena Berko on 7/25/2017.
  */
 
 public class Main {
-    @SerializedName("temp")
+    @Key("temp")
     private double temp;
 
-    @SerializedName("feels_like")
+    @Key("feels_like")
     private double feelsLike;
 
-    @SerializedName("temp_min")
+    @Key("temp_min")
     private double tempMin;
 
-    @SerializedName("temp_max")
+    @Key("temp_max")
     private double tempMax;
 
-    @SerializedName("pressure")
+    @Key("pressure")
     private double pressure;
 
-    @SerializedName("humidity")
+    @Key("humidity")
     private double humidity;
 
-    @SerializedName("sea_level")
+    @Key("sea_level")
     private Double seaLevel;
 
-    @SerializedName("grnd_level")
+    @Key("grnd_level")
     private Double grndLevel;
 
-    @SerializedName("temp_kf")
+    @Key("temp_kf")
     private Double tempKf;
 
 

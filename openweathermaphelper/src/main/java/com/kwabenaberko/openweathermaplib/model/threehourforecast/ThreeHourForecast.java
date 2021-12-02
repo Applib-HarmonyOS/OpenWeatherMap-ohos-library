@@ -1,6 +1,6 @@
 package com.kwabenaberko.openweathermaplib.model.threehourforecast;
 
-import com.google.gson.annotations.SerializedName;
+import com.google.api.client.util.Key;
 
 import java.util.List;
 
@@ -10,19 +10,19 @@ import java.util.List;
 
 public class ThreeHourForecast {
 
-    @SerializedName("cod")
+    @Key("cod")
     private String cod;
 
-    @SerializedName("message")
+    @Key("message")
     private double message;
 
-    @SerializedName("cnt")
+    @Key("cnt")
     private int cnt;
 
-    @SerializedName("list")
+    @Key("list")
     private List<ThreeHourForecastWeather> list;
 
-    @SerializedName("city")
+    @Key("city")
     private City city;
 
 

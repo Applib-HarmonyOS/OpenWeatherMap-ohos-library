@@ -1,19 +1,19 @@
 package com.kwabenaberko.openweathermaplib.model.common;
 
-import com.google.gson.annotations.SerializedName;
+import com.google.api.client.util.Key;
 
 /**
  * Created by Kwabena Berko on 7/25/2017.
  */
 
 public class Wind {
-    @SerializedName("speed")
+    @Key("speed")
     private double speed;
 
-    @SerializedName("deg")
+    @Key("deg")
     private double deg;
 
-    @SerializedName("gust")
+    @Key("gust")
     private Double gust;
 
     public double getSpeed() {

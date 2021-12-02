@@ -1,6 +1,6 @@
 package com.kwabenaberko.openweathermaplib.model.common;
 
-import com.google.gson.annotations.SerializedName;
+import com.google.api.client.util.Key;
 
 /**
  * Created by Kwabena Berko on 7/25/2017.
@@ -8,10 +8,10 @@ import com.google.gson.annotations.SerializedName;
 
 public class Coord {
 
-    @SerializedName("lon")
+    @Key("lon")
     private double lon;
 
-    @SerializedName("lat")
+    @Key("lat")
     private double lat;
 
     public double getLon() {

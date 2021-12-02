@@ -1,23 +1,15 @@
 package com.kwabenaberko.openweathermaplib.network;
 
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-
 /**
  * Created by Kwabena Berko on 7/25/2017.
  */
 
 public class OpenWeatherMapClient {
-    private static final String BASE_URL = "https://api.openweathermap.org";
-    private static Retrofit retrofit = null;
-    public static Retrofit getClient(){
-        if (retrofit == null){
-            retrofit = new Retrofit.Builder()
-                    .baseUrl(BASE_URL)
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
-        }
-        return retrofit;
+    public static final String BASE_URL = "https://api.openweathermap.org";
+    public static String CURRENT = "/data/2.5/weather";
+    public static String FORECAST = "/data/2.5/forecast";
+    private static OpenWeatherMapService weatherService = new OpenWeatherMapService();
+    public static OpenWeatherMapService getClient(){
+        return weatherService;
     }
-
 }

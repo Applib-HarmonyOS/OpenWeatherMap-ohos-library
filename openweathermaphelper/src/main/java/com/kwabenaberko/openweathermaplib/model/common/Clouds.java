@@ -1,6 +1,6 @@
 package com.kwabenaberko.openweathermaplib.model.common;
 
-import com.google.gson.annotations.SerializedName;
+import com.google.api.client.util.Key;
 
 /**
  * Created by Kwabena Berko on 7/25/2017.
@@ -8,7 +8,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class Clouds {
 
-    @SerializedName("all")
+    @Key("all")
     private double all;
 
     public double getAll() {

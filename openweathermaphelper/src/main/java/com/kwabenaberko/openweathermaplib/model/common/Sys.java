@@ -1,6 +1,6 @@
 package com.kwabenaberko.openweathermaplib.model.common;
 
-import com.google.gson.annotations.SerializedName;
+import com.google.api.client.util.Key;
 
 /**
  * Created by Kwabena Berko on 7/25/2017.
@@ -8,25 +8,25 @@ import com.google.gson.annotations.SerializedName;
 
 public class Sys {
 
-    @SerializedName("type")
+    @Key("type")
     private double type;
 
-    @SerializedName("id")
+    @Key("id")
     private Long id;
 
-    @SerializedName("message")
+    @Key("message")
     private Double message;
 
-    @SerializedName("country")
+    @Key("country")
     private String country;
 
-    @SerializedName("sunrise")
+    @Key("sunrise")
     private Long sunrise;
 
-    @SerializedName("sunset")
+    @Key("sunset")
     private Long sunset;
 
-    @SerializedName("pod")
+    @Key("pod")
     private Character pod;
 
     public double getType() {
