@@ -19,7 +19,7 @@
       "deliveryWithInstall": true,
       "moduleName": "entry",
       "moduleType": "entry",
-      "installationFree": true
+      "installationFree": false
     },
     "reqPermissions": [
       {
@@ -46,7 +46,6 @@
           }
         ],
         "orientation": "unspecified",
-        "visible": true,
         "name": "com.kwabenaberko.openweathermap.MainAbility",
         "icon": "$media:icon",
         "description": "$string:mainability_description",
