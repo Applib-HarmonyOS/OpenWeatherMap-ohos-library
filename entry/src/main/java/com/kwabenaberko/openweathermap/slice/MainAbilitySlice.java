@@ -53,7 +53,7 @@ public class MainAbilitySlice extends AbilitySlice {
                     public void run() {
                         ((Text)findComponentById(ResourceTable.Id_TvUpdate)).setText(weatherReport);
                     }
-                })
+                });
             }
 
             @Override

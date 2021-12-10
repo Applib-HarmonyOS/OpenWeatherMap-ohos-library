@@ -12,7 +12,11 @@
   "module": {
     "package": "com.kwabenaberko.openweathermaplib",
     "deviceType": [
-      "phone"
+      "phone",
+      "tablet",
+      "tv",
+      "wearable",
+      "car"
     ],
     "distro": {
       "deliveryWithInstall": true,
