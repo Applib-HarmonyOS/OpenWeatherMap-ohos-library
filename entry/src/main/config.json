@@ -35,6 +35,16 @@
           ],
           "when": "always"
         }
+      },
+      {
+        "name": "ohos.permission.LOCATION",
+        "reason": "Api call",
+        "usedScene": {
+          "ability": [
+            "com.kwabenaberko.openweathermap.MainAbility"
+          ],
+          "when": "inuse"
+        }
       }
     ],
     "abilities": [

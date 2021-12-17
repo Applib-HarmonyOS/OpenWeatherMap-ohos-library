@@ -15,6 +15,10 @@
     {
       "name": "mainability_update",
       "value": "Update"
+    },
+    {
+      "name": "city",
+      "value": "Enter city name"
     }
   ]
 }
