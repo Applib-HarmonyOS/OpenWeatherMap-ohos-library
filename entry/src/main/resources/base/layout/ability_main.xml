@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:margin="10vp"
+    ohos:orientation="vertical">
+
+    <Text
+        ohos:height="match_content"
+        ohos:width="match_parent"
+        ohos:text=" Weather by City Name"
+        ohos:top_margin="20vp"
+        ohos:text_size="24vp"/>
+    <DirectionalLayout
+        ohos:height="match_content"
+        ohos:width="match_parent"
+        ohos:top_margin="20vp"
+        ohos:orientation="horizontal">
+
+        <TextField
+            ohos:id="$+id:TvCity"
+            ohos:height="match_content"
+            ohos:width="200vp"
+            ohos:background_element="$graphic:background_ability_main"
+            ohos:hint="$string:city"
+            ohos:multiple_lines="false"
+            ohos:text_input_type="pattern_text"
+            ohos:text_size="24vp"/>
+
+        <Button
+            ohos:id="$+id:btnCityWeather"
+            ohos:height="match_content"
+            ohos:width="match_content"
+            ohos:start_margin="10vp"
+            ohos:background_element="$graphic:background_ability_main"
+            ohos:text="Fetch"
+            ohos:text_size="24vp"/>
+
+    </DirectionalLayout>
+    <Text
+        ohos:id="$+id:TvCityDetails"
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:top_margin="20vp"
+        ohos:background_element="$graphic:background_ability_main2"
+        ohos:layout_alignment="horizontal_center"
+        ohos:multiple_lines="true"
+        ohos:text_input_type="pattern_text"
+        ohos:text_size="24vp"/>
+    <Button
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:id="$+id:btnLiveLoc"
+        ohos:start_margin="10vp"
+        ohos:top_margin="20vp"
+        ohos:background_element="$graphic:background_ability_main"
+        ohos:text="Weather by my Location"
+        ohos:text_size="24vp"/>
+    <Text
+        ohos:id="$+id:TvLocDetails"
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:top_margin="15vp"
+        ohos:start_margin="20vp"
+        ohos:background_element="$graphic:background_ability_main2"
+        ohos:layout_alignment="horizontal_center"
+        ohos:multiple_lines="true"
+        ohos:text_input_type="pattern_text"
+        ohos:text_size="24vp"/>
+
+</DirectionalLayout>

@@ -1,0 +1,72 @@
+{
+  "app": {
+    "bundleName": "com.kwabenaberko.openweathermap",
+    "vendor": "kwabenaberko",
+    "version": {
+      "code": 1000000,
+      "name": "1.0.0"
+    }
+  },
+  "deviceConfig": {},
+  "module": {
+    "package": "com.kwabenaberko.openweathermap",
+    "name": ".MyApplication",
+    "mainAbility": "com.kwabenaberko.openweathermap.MainAbility",
+    "deviceType": [
+      "phone",
+      "tablet",
+      "tv",
+      "wearable",
+      "car"
+    ],
+    "distro": {
+      "deliveryWithInstall": true,
+      "moduleName": "entry",
+      "moduleType": "entry",
+      "installationFree": false
+    },
+    "reqPermissions": [
+      {
+        "name": "ohos.permission.INTERNET",
+        "reason": "Api call",
+        "usedScene": {
+          "ability": [
+            "com.kwabenaberko.openweathermap.MainAbility"
+          ],
+          "when": "always"
+        }
+      },
+      {
+        "name": "ohos.permission.LOCATION",
+        "reason": "Api call",
+        "usedScene": {
+          "ability": [
+            "com.kwabenaberko.openweathermap.MainAbility"
+          ],
+          "when": "inuse"
+        }
+      }
+    ],
+    "abilities": [
+      {
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home"
+            ]
+          }
+        ],
+        "orientation": "unspecified",
+        "name": "com.kwabenaberko.openweathermap.MainAbility",
+        "icon": "$media:icon",
+        "description": "$string:mainability_description",
+        "label": "$string:entry_MainAbility",
+        "type": "page",
+        "launchType": "standard"
+      }
+    ]
+  }
+}

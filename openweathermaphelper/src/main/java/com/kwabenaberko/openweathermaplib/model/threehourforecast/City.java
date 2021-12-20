@@ -1,6 +1,6 @@
 package com.kwabenaberko.openweathermaplib.model.threehourforecast;
 
-import com.google.gson.annotations.SerializedName;
+import com.google.api.client.util.Key;
 import com.kwabenaberko.openweathermaplib.model.common.Coord;
 
 /**
@@ -9,28 +9,28 @@ import com.kwabenaberko.openweathermaplib.model.common.Coord;
 
 public class City {
 
-    @SerializedName("id")
+    @Key("id")
     private long id;
 
-    @SerializedName("name")
+    @Key("name")
     private String name;
 
-    @SerializedName("coord")
+    @Key("coord")
     private Coord coord;
 
-    @SerializedName("country")
+    @Key("country")
     private String country;
 
-    @SerializedName("timezone")
+    @Key("timezone")
     private Long timezone;
 
-    @SerializedName("population")
+    @Key("population")
     private Long population;
 
-    @SerializedName("sunrise")
+    @Key("sunrise")
     private Long sunrise;
 
-    @SerializedName("sunset")
+    @Key("sunset")
     private Long sunset;
 
     public long getId() {

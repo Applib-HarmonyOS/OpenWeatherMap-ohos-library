@@ -1,48 +1,68 @@
 package com.kwabenaberko.openweathermaplib.network;
 
+import com.google.api.client.http.*;
+import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.api.client.json.JsonFactory;
+import com.google.api.client.json.JsonObjectParser;
+import com.google.api.client.json.jackson2.JacksonFactory;
 import com.kwabenaberko.openweathermaplib.model.currentweather.CurrentWeather;
 import com.kwabenaberko.openweathermaplib.model.threehourforecast.ThreeHourForecast;
 
+import java.net.HttpURLConnection;
 import java.util.Map;
 
-import retrofit2.Call;
-import retrofit2.http.GET;
-import retrofit2.http.QueryMap;
+import static com.kwabenaberko.openweathermaplib.network.OpenWeatherMapClient.*;
 
 /**
  * Created by Kwabena Berko on 7/25/2017.
  */
 
-public interface OpenWeatherMapService {
+public class OpenWeatherMapService {
+    private final HttpTransport HTTP_TRANSPORT = new NetHttpTransport();
+    private final JsonFactory JSON_FACTORY = new JacksonFactory();
 
-    String CURRENT = "/data/2.5/weather";
-    String FORECAST = "/data/2.5/forecast";
+    public CurrentWeather getWeather(Map<String, String> options) throws Exception {
+        return (CurrentWeather) getWeatherData(createUrl(BASE_URL, CURRENT, options), CurrentWeather.class);
+    }
 
-    //Current Weather Endpoints start
-    @GET(CURRENT)
-    Call<CurrentWeather> getCurrentWeatherByCityName(@QueryMap Map<String, String> options);
+    public ThreeHourForecast getWeatherForeCast(Map<String, String> options) throws Exception {
+        return (ThreeHourForecast) getWeatherData(createUrl(BASE_URL, FORECAST, options), ThreeHourForecast.class);
+    }
 
-    @GET(CURRENT)
-    Call<CurrentWeather> getCurrentWeatherByCityID(@QueryMap Map<String, String> options);
+    private String createUrl(String baseUrl, String weathertype, Map<String, String> options) {
+        StringBuilder query = new StringBuilder();
+        for(Map.Entry<String, String> entry : options.entrySet()) {
+            if (query.length() > 0) {
+                query.append("&");
+            }
+            query.append(entry.getKey()).append("=").append(entry.getValue());
+        }
+        return baseUrl + weathertype + "?" + query;
+    }
 
-    @GET(CURRENT)
-    Call<CurrentWeather> getCurrentWeatherByGeoCoordinates(@QueryMap Map<String, String> options);
+    /** URL for Dailymotion API. */
+    public class WeatherUrl extends GenericUrl {
+        public WeatherUrl(String encodedUrl) {
+            super(encodedUrl);
+        }
+    }
 
-    @GET(CURRENT)
-    Call<CurrentWeather> getCurrentWeatherByZipCode(@QueryMap Map<String, String> options);
+    public Object getWeatherData(String link, Class objclass) throws Exception {
+        HttpRequestFactory requestFactory =
+                HTTP_TRANSPORT.createRequestFactory(
+                        request -> request.setParser(new JsonObjectParser(JSON_FACTORY)));
+        WeatherUrl url = new WeatherUrl(link);
+        HttpRequest request = requestFactory.buildGetRequest(url);
+        HttpResponse httpResponse = request.execute();
+        if (httpResponse.isSuccessStatusCode())
+            return httpResponse.parseAs(objclass);
+        throw new Exception(handleCurrentWeatherResponse(httpResponse));
+    }
 
-    //Current Weather Endpoints end
-
-    //Three hour forecast endpoints start
-    @GET(FORECAST)
-    Call<ThreeHourForecast> getThreeHourForecastByCityName(@QueryMap Map<String, String> options);
-
-    @GET(FORECAST)
-    Call<ThreeHourForecast> getThreeHourForecastByCityID(@QueryMap Map<String, String> options);
-
-    @GET(FORECAST)
-    Call<ThreeHourForecast> getThreeHourForecastByGeoCoordinates(@QueryMap Map<String, String> options);
-
-    @GET(FORECAST)
-    Call<ThreeHourForecast> getThreeHourForecastByZipCode(@QueryMap Map<String, String> options);
+    private String handleCurrentWeatherResponse(HttpResponse response){
+        if (response.getStatusCode() == HttpURLConnection.HTTP_FORBIDDEN || response.getStatusCode() == HttpURLConnection.HTTP_UNAUTHORIZED){
+            return "UnAuthorized. Please set a valid OpenWeatherMap API KEY.";
+        }
+        return response.getStatusMessage();
+    }
 }

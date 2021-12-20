@@ -1,13 +1,7 @@
 package com.kwabenaberko.openweathermaplib.model.threehourforecast;
 
-import com.google.gson.annotations.SerializedName;
-import com.kwabenaberko.openweathermaplib.model.common.Clouds;
-import com.kwabenaberko.openweathermaplib.model.common.Main;
-import com.kwabenaberko.openweathermaplib.model.common.Rain;
-import com.kwabenaberko.openweathermaplib.model.common.Snow;
-import com.kwabenaberko.openweathermaplib.model.common.Sys;
-import com.kwabenaberko.openweathermaplib.model.common.Weather;
-import com.kwabenaberko.openweathermaplib.model.common.Wind;
+import com.google.api.client.util.Key;
+import com.kwabenaberko.openweathermaplib.model.common.*;
 
 import java.util.List;
 
@@ -17,37 +11,37 @@ import java.util.List;
 
 public class ThreeHourForecastWeather {
 
-    @SerializedName("dt")
+    @Key("dt")
     private Long dt;
 
-    @SerializedName("main")
+    @Key("main")
     private Main main;
 
-    @SerializedName("weather")
+    @Key("weather")
     private List<Weather> weather;
 
-    @SerializedName("clouds")
+    @Key("clouds")
     private Clouds clouds;
 
-    @SerializedName("wind")
+    @Key("wind")
     private Wind wind;
 
-    @SerializedName("visibility")
+    @Key("visibility")
     private Long visibility;
 
-    @SerializedName("pop")
+    @Key("pop")
     private Double pop;
 
-    @SerializedName("rain")
+    @Key("rain")
     private Rain rain;
 
-    @SerializedName("snow")
+    @Key("snow")
     private Snow snow;
 
-    @SerializedName("sys")
+    @Key("sys")
     private Sys mSys;
 
-    @SerializedName("dt_txt")
+    @Key("dt_txt")
     private String dtTxt;
 
     public Long getDt() {

@@ -1,14 +1,7 @@
 package com.kwabenaberko.openweathermaplib.model.currentweather;
 
-import com.google.gson.annotations.SerializedName;
-import com.kwabenaberko.openweathermaplib.model.common.Clouds;
-import com.kwabenaberko.openweathermaplib.model.common.Main;
-import com.kwabenaberko.openweathermaplib.model.common.Rain;
-import com.kwabenaberko.openweathermaplib.model.common.Snow;
-import com.kwabenaberko.openweathermaplib.model.common.Weather;
-import com.kwabenaberko.openweathermaplib.model.common.Wind;
-import com.kwabenaberko.openweathermaplib.model.common.Coord;
-import com.kwabenaberko.openweathermaplib.model.common.Sys;
+import com.google.api.client.util.Key;
+import com.kwabenaberko.openweathermaplib.model.common.*;
 
 import java.util.List;
 
@@ -18,49 +11,49 @@ import java.util.List;
 
 public class CurrentWeather {
 
-    @SerializedName("coord")
+    @Key("coord")
     private Coord coord;
 
-    @SerializedName("weather")
+    @Key("weather")
     private List<Weather> weather;
 
-    @SerializedName("base")
+    @Key("base")
     private String base;
 
-    @SerializedName("main")
+    @Key("main")
     private Main main;
 
-    @SerializedName("visibility")
+    @Key("visibility")
     private Long visibility;
 
-    @SerializedName("wind")
+    @Key("wind")
     private Wind wind;
 
-    @SerializedName("clouds")
+    @Key("clouds")
     private Clouds clouds;
 
-    @SerializedName("rain")
+    @Key("rain")
     private Rain rain;
 
-    @SerializedName("snow")
+    @Key("snow")
     private Snow snow;
 
-    @SerializedName("dt")
+    @Key("dt")
     private Long dt;
 
-    @SerializedName("sys")
+    @Key("sys")
     private Sys sys;
 
-    @SerializedName("timezone")
+    @Key("timezone")
     private Long timezone;
 
-    @SerializedName("id")
+    @Key("id")
     private Long id;
 
-    @SerializedName("name")
+    @Key("name")
     private String name;
 
-    @SerializedName("cod")
+    @Key("cod")
     private Integer cod;
 
     public Coord getCoord() {

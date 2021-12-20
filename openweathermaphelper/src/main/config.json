@@ -1,0 +1,27 @@
+{
+  "app": {
+    "bundleName": "com.kwabenaberko.openweathermap",
+    "vendor": "kwabenaberko",
+    "version": {
+      "code": 1000000,
+      "name": "1.0.0"
+    }
+  },
+  "deviceConfig": {
+  },
+  "module": {
+    "package": "com.kwabenaberko.openweathermaplib",
+    "deviceType": [
+      "phone",
+      "tablet",
+      "tv",
+      "wearable",
+      "car"
+    ],
+    "distro": {
+      "deliveryWithInstall": true,
+      "moduleName": "openweathermaphelper",
+      "moduleType": "har"
+    }
+  }
+}

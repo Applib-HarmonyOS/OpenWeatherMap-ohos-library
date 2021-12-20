@@ -1,38 +1,15 @@
 
-## OpenWeatherMap-Android-Library  
-[![](https://jitpack.io/v/KwabenBerko/OpenWeatherMap-Android-Library.svg)](https://jitpack.io/#KwabenBerko/OpenWeatherMap-Android-Library)
-
+## OpenWeatherMap-ohos-Library  
 
 **You need an API Key to use the OpenWeatherMap API. Head on over to their [website](http://openweathermap.org/) if you don't already have one.**
 
-
-## Download
-
-#### Step 1. Add the JitPack repository to your root ```build.gradle``` file.
-
-``` java
-allprojects {
-  repositories {
-    ...
-    maven { url 'https://jitpack.io' }
-  }
-}
-```
-
-#### Step 2 : Download via ```Gradle```:
-
-```java
-implementation 'com.github.KwabenBerko:OpenWeatherMap-Android-Library:2.1.0'
-```
-
-**Note: Remember to include the INTERNET permission to your manifest file**
 
 ## Usage
 
 #### Instantiate Class With Your OpenWeatherMap Api Key
 
 ``` java 
-OpenWeatherMapHelper helper = new OpenWeatherMapHelper(getString(R.string.OPEN_WEATHER_MAP_API_KEY));
+OpenWeatherMapHelper helper = new OpenWeatherMapHelper(getString(ResourceTable.String_OPEN_WEATHER_MAP_API_KEY));
 ```
 
 #### Set your Units (Optional, STANDARD by default)
@@ -221,11 +198,3 @@ helper.setLanguage(Languages.ENGLISH);
      }
  });
 ```
-
-
-
-
-
-### Upcoming Features
-1. Hourly Forecast 4 days
-2. Daily Forecast 16 days

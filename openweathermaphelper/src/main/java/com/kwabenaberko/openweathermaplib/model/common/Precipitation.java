@@ -1,13 +1,13 @@
 package com.kwabenaberko.openweathermaplib.model.common;
 
-import com.google.gson.annotations.SerializedName;
+import com.google.api.client.util.Key;
 
 public class Precipitation {
 
-    @SerializedName("1h")
+    @Key("1h")
     private Double oneHour;
 
-    @SerializedName("3h")
+    @Key("3h")
     private Double threeHour;
 
     public Double getOneHour() {
