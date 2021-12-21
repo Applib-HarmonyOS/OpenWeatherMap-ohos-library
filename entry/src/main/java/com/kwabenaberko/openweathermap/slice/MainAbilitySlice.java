@@ -20,8 +20,7 @@ import ohos.location.RequestParam;
 
 public class MainAbilitySlice extends AbilitySlice {
     private String TAG = MainAbilitySlice.class.getSimpleName();
-    private static OpenWeatherMapHelper helper;
-    private static String weatherReport;
+    private String weatherReport;
     private double mLatitude;
     private double mLongitude;
 
